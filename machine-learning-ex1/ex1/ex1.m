@@ -1,32 +1,15 @@
-%% Machine Learning Online Class - Exercise 1: Linear Regression
 
-%  Instructions
-%  ------------
-%
-%  This file contains code that helps you get started on the
-%  linear exercise. You will need to complete the following functions
-%  in this exericse:
-%
-%     warmUpExercise.m
-%     plotData.m
-%     gradientDescent.m
-%     computeCost.m
-%     gradientDescentMulti.m
-%     computeCostMulti.m
-%     featureNormalize.m
-%     normalEqn.m
-%
-%  For this exercise, you will not need to change any code in this file,
-%  or any other files other than those mentioned above.
-%
+%% Stanford ML on Coursera - Exercise 1: Linear Regression
+
 % x refers to the population size in 10,000s
 % y refers to the profit in $10,000s
 %
 
+
 %% Initialization
 clear ; close all; clc
 
-%% ==================== Part 1: Basic Function ====================
+%% ==================== Part 1: Basic Function =============================
 % Complete warmUpExercise.m
 fprintf('Running warmUpExercise ... \n');
 fprintf('5x5 Identity Matrix: \n');
@@ -36,7 +19,7 @@ fprintf('Program paused. Press enter to continue.\n');
 pause;
 
 
-%% ======================= Part 2: Plotting =======================
+%% ===============++++++++++======= Part 2: Plotting =======================
 fprintf('Plotting Data ...\n')
 data = load('ex1data1.txt');
 X = data(:, 1); y = data(:, 2);
@@ -117,7 +100,6 @@ for i = 1:length(theta0_vals)
     end
 end
 
-
 % Because of the way meshgrids work in the surf command, we need to
 % transpose J_vals before calling surf, or else the axes will be flipped
 J_vals = J_vals';
@@ -133,3 +115,10 @@ contour(theta0_vals, theta1_vals, J_vals, logspace(-2, 3, 20))
 xlabel('\theta_0'); ylabel('\theta_1');
 hold on;
 plot(theta(1), theta(2), 'rx', 'MarkerSize', 10, 'LineWidth', 2);
+
+fprintf('Univariate linear regression complete!\n');
+fprintf('Program paused. Press enter to clear.\n');
+pause;
+close all; % Close all open figures
+clear; % Clear all variables in workspace
+clc; % Clear command window
